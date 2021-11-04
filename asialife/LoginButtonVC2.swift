@@ -7,18 +7,21 @@
 
 import Foundation
 import UIKit
-class LoginButtonVC2: UIViewController{
-    var loginControoler = LoginController()
-    var account = String()
-    var password = String()
+class LoginButtonVC2: UIViewController, UITextFieldDelegate{
+    
+    
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    override func viewDidLoad() {
-        
-    }
-    func setTextField(){
-        loginControoler.account=accountTextField.text ?? ""
-        loginControoler.password=passwordTextField.text ?? ""
+    override func viewDidLoad(){
+        accountTextField.delegate = self
+        passwordTextField.delegate = self
+        view.isUserInteractionEnabled = true
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+        TextFieldModel.sharedModel.accountText = accountTextField.text
+           return true
+     }
+   
 }

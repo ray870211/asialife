@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F240D4F2732C32E0047F8FC /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F240D4E2732C32E0047F8FC /* TextFieldModel.swift */; };
 		9F47EE6227097E250036FD11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47EE6127097E250036FD11 /* AppDelegate.swift */; };
 		9F47EE6427097E250036FD11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47EE6327097E250036FD11 /* SceneDelegate.swift */; };
 		9F47EE6627097E250036FD11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47EE6527097E250036FD11 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F240D4E2732C32E0047F8FC /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		9F47EE5E27097E250036FD11 /* asialife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asialife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F47EE6127097E250036FD11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F47EE6327097E250036FD11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		9F47EE6027097E250036FD11 /* asialife */ = {
 			isa = PBXGroup;
 			children = (
+				9F531CD327203723004A144F /* Modal */,
 				9FDD59DB27145D56004CF522 /* LoginButtonVC1.swift */,
 				9F47EE6127097E250036FD11 /* AppDelegate.swift */,
 				9F47EE6327097E250036FD11 /* SceneDelegate.swift */,
@@ -74,6 +77,14 @@
 				9F47EE6F27097E270036FD11 /* Info.plist */,
 			);
 			path = asialife;
+			sourceTree = "<group>";
+		};
+		9F531CD327203723004A144F /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				9F240D4E2732C32E0047F8FC /* TextFieldModel.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		9FDD59D8271456AF004CF522 /* Views */ = {
@@ -161,6 +172,7 @@
 				9F47EE6227097E250036FD11 /* AppDelegate.swift in Sources */,
 				9F47EE6427097E250036FD11 /* SceneDelegate.swift in Sources */,
 				9FDD59DE27152E0E004CF522 /* LoginButtonVC2.swift in Sources */,
+				9F240D4F2732C32E0047F8FC /* TextFieldModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
