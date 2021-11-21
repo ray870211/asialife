@@ -11,12 +11,18 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var containerView1: UIView!
     @IBOutlet weak var containerView2: UIView!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         postApi()
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "storeControllerVC1"{
+            if let storeControllerVC1 = segue.destination as? StoreControllerVC1{
+//                storeControllerVC1.aaa="123"
+            }
+        }
+    }
     @IBAction func changContainerBtn(_ sender: UISegmentedControl) {
         print(containerView1.isHidden)
         if(containerView1.isHidden==false){
