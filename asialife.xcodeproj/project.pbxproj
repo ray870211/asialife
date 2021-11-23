@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0658FE274BDD020069DE10 /* ForumControllerVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0658FD274BDD020069DE10 /* ForumControllerVC1.swift */; };
+		9F065900274BDD8A0069DE10 /* ForumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0658FF274BDD8A0069DE10 /* ForumController.swift */; };
+		9F065902274BED920069DE10 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F065901274BED920069DE10 /* AddPostController.swift */; };
+		9F065904274C1FCF0069DE10 /* PostPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F065903274C1FCF0069DE10 /* PostPageController.swift */; };
 		9F240D4F2732C32E0047F8FC /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F240D4E2732C32E0047F8FC /* TextFieldModel.swift */; };
 		9F2C8B4C2748D0B90054AC7F /* StoreControllerVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C8B4B2748D0B90054AC7F /* StoreControllerVC1.swift */; };
 		9F47EE6227097E250036FD11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47EE6127097E250036FD11 /* AppDelegate.swift */; };
@@ -15,12 +19,17 @@
 		9F47EE6927097E250036FD11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F47EE6727097E250036FD11 /* Main.storyboard */; };
 		9F47EE6B27097E270036FD11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F47EE6A27097E270036FD11 /* Assets.xcassets */; };
 		9F47EE6E27097E270036FD11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F47EE6C27097E270036FD11 /* LaunchScreen.storyboard */; };
+		9FAAA942274B6F8800934631 /* StorePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAAA941274B6F8800934631 /* StorePageController.swift */; };
 		9FDD59DC27145D56004CF522 /* LoginButtonVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD59DB27145D56004CF522 /* LoginButtonVC1.swift */; };
 		9FDD59DE27152E0E004CF522 /* LoginButtonVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD59DD27152E0E004CF522 /* LoginButtonVC2.swift */; };
 		9FECB27D27098913001BCDA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECB27C27098913001BCDA6 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F0658FD274BDD020069DE10 /* ForumControllerVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumControllerVC1.swift; sourceTree = "<group>"; };
+		9F0658FF274BDD8A0069DE10 /* ForumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumController.swift; sourceTree = "<group>"; };
+		9F065901274BED920069DE10 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
+		9F065903274C1FCF0069DE10 /* PostPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPageController.swift; sourceTree = "<group>"; };
 		9F240D4E2732C32E0047F8FC /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		9F2C8B4B2748D0B90054AC7F /* StoreControllerVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreControllerVC1.swift; sourceTree = "<group>"; };
 		9F47EE5E27097E250036FD11 /* asialife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asialife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +40,7 @@
 		9F47EE6A27097E270036FD11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F47EE6D27097E270036FD11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F47EE6F27097E270036FD11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FAAA941274B6F8800934631 /* StorePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePageController.swift; sourceTree = "<group>"; };
 		9FDD59DB27145D56004CF522 /* LoginButtonVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonVC1.swift; sourceTree = "<group>"; };
 		9FDD59DD27152E0E004CF522 /* LoginButtonVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonVC2.swift; sourceTree = "<group>"; };
 		9FECB27C27098913001BCDA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -68,12 +78,17 @@
 			children = (
 				9F531CD327203723004A144F /* Modal */,
 				9FDD59DB27145D56004CF522 /* LoginButtonVC1.swift */,
+				9F0658FF274BDD8A0069DE10 /* ForumController.swift */,
 				9F47EE6127097E250036FD11 /* AppDelegate.swift */,
 				9F2C8B4B2748D0B90054AC7F /* StoreControllerVC1.swift */,
 				9F47EE6327097E250036FD11 /* SceneDelegate.swift */,
 				9FDD59DD27152E0E004CF522 /* LoginButtonVC2.swift */,
 				9F47EE6527097E250036FD11 /* ViewController.swift */,
 				9FECB27C27098913001BCDA6 /* LoginController.swift */,
+				9FAAA941274B6F8800934631 /* StorePageController.swift */,
+				9F0658FD274BDD020069DE10 /* ForumControllerVC1.swift */,
+				9F065901274BED920069DE10 /* AddPostController.swift */,
+				9F065903274C1FCF0069DE10 /* PostPageController.swift */,
 				9FDD59D8271456AF004CF522 /* Views */,
 				9F47EE6A27097E270036FD11 /* Assets.xcassets */,
 				9F47EE6C27097E270036FD11 /* LaunchScreen.storyboard */,
@@ -170,13 +185,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FDD59DC27145D56004CF522 /* LoginButtonVC1.swift in Sources */,
+				9F065902274BED920069DE10 /* AddPostController.swift in Sources */,
 				9F2C8B4C2748D0B90054AC7F /* StoreControllerVC1.swift in Sources */,
 				9F47EE6627097E250036FD11 /* ViewController.swift in Sources */,
 				9FECB27D27098913001BCDA6 /* LoginController.swift in Sources */,
 				9F47EE6227097E250036FD11 /* AppDelegate.swift in Sources */,
+				9F065900274BDD8A0069DE10 /* ForumController.swift in Sources */,
 				9F47EE6427097E250036FD11 /* SceneDelegate.swift in Sources */,
 				9FDD59DE27152E0E004CF522 /* LoginButtonVC2.swift in Sources */,
+				9F065904274C1FCF0069DE10 /* PostPageController.swift in Sources */,
 				9F240D4F2732C32E0047F8FC /* TextFieldModel.swift in Sources */,
+				9F0658FE274BDD020069DE10 /* ForumControllerVC1.swift in Sources */,
+				9FAAA942274B6F8800934631 /* StorePageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

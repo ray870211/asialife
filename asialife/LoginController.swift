@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 class LoginController:UIViewController{
     
@@ -94,7 +93,7 @@ class LoginController:UIViewController{
                     }
                     if(createUserResponse.status_code=="404"){
                         DispatchQueue.main.async {
-                            //切換到主線程b
+                            //切換到主線程
                             let controller = UIAlertController(title: "錯誤", message: "帳號或密碼錯誤", preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             controller.addAction(okAction)
