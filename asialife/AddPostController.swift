@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
-class AddPostController: UIViewController{
+class AddPostController: UIViewController, UITextFieldDelegate{
     var refreshControl:UIRefreshControl!
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postContent: UITextField!
     var postClass : String = ""
     override func viewDidLoad(){
-        
+        postTitle.delegate = self
+        postContent.delegate = self
     }
     @IBAction func AddPostButtonClick(_ sender: UIButton) {
         print(postTitle.text!)
@@ -26,12 +27,16 @@ class AddPostController: UIViewController{
             postApi()
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+               textField.resignFirstResponder()
+               return true
+         }
     func postApi(){
         struct CreateUserResponse: Decodable {
             let status_code: String
         }
         let postData = "title=\(postTitle.text!)&class=\(postClass)&user=ray&content=\(postContent.text!)".data(using: .utf8)
-        let url = URL(string: "http://192.168.1.19/add_post.php")!
+        let url = URL(string: "\(ApiMode().url)/add_post.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

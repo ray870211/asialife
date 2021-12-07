@@ -12,7 +12,7 @@ class LoginController:UIViewController{
     
     @IBOutlet weak var loginBtnContainerView1: UIView!
     @IBOutlet weak var loginBtnContainerView2: UIView!
-    @IBOutlet weak var fbBtn: UIButton!
+    @IBOutlet var buttons: [UIButton]!
     var email = String()
     var password = String()
     var responseData:[String] = []
@@ -26,8 +26,10 @@ class LoginController:UIViewController{
         
         // Do any additional setup after loading the view.
         loginBtnContainerView2.isHidden=true
-        fbBtn.contentVerticalAlignment = .fill
-        fbBtn.contentHorizontalAlignment = .fill
+        
+    
+
+        
     }
     
     
@@ -73,7 +75,7 @@ class LoginController:UIViewController{
             let message: String
         }
         let postData = "email=\(email)&password=\(password)".data(using: .utf8)
-        let url = URL(string: "http://192.168.1.19//login.php")!
+        let url = URL(string: "\(ApiMode().url)/login.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

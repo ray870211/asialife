@@ -13,7 +13,6 @@ class StoreControllerVC1: UIViewController{
     @IBOutlet var label: [UILabel]!
     @IBOutlet var topImage: [UIImageView]!
     @IBOutlet var imageButton: [UIButton]!
-    var buttonTag = 0
     var name = [String]()
     var storeImage = [String]()
     var address = [String]()
@@ -26,17 +25,19 @@ class StoreControllerVC1: UIViewController{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "ToStorePageSegue"{
+            let tag = sender as! Int
             if let sotrePage = segue.destination as? StorePageController {
-//                sotrePage.storeTitle.text = name[buttonTag]
+                
+                sotrePage.titleText = name[tag]
+                sotrePage.imageText = storeImage[tag]
+                sotrePage.addressText = address[tag]
+                sotrePage.phoneText = phone[tag]
             }
         }
     }
     override func viewDidLoad() {
         postApi {
             DispatchQueue.main.async {
-//                for i in 0...self.topImage.count-1{
-//                    self.topImage[i].image(self.convertBase64StringToImage(imageBase64String: self.storeImage[i]),for: .normal)
-//                }
                 for i in 0...self.name.count-1 {
                     self.imageButton[i].setImage(self.convertBase64StringToImage(imageBase64String: self.storeImage[i]),for: .normal)
                     self.label[i].text = self.name[i]
@@ -46,9 +47,7 @@ class StoreControllerVC1: UIViewController{
         }
     }
     @IBAction func clickButton(_ sender: UIButton) {
-        print(sender.tag)
-        buttonTag = sender.tag
-        self.performSegue(withIdentifier: "ToStorePageSegue", sender: self)
+        self.performSegue(withIdentifier: "ToStorePageSegue", sender: sender.tag)
         //        print(store[0].name)
     }
     
@@ -63,7 +62,7 @@ class StoreControllerVC1: UIViewController{
             let address: String
             let phone: String
         }
-        let url = URL(string: "http://192.168.1.19/select_store.php")!
+        let url = URL(string: "\(ApiMode().url)/select_store.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -78,7 +77,7 @@ class StoreControllerVC1: UIViewController{
                         self.storeImage.append(storeData.image)
                         self.address.append(storeData.address)
                         self.phone.append(storeData.phone)
-                    }
+                        }
                     completionBlock()
                     //                    print(createUserResponse.store_data[0].name)
                 } catch  {

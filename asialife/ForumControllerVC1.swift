@@ -37,7 +37,7 @@ class ForumControllerVC1: UIViewController{
                 let post_content: String
                 let post_create_time: String
             }
-            let url = URL(string: "http://192.168.1.19/select_post.php")!
+            let url = URL(string: "\(ApiMode().url)/select_post.php")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -67,18 +67,18 @@ class ForumControllerVC1: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToPostControllerSegue" {
-            if let destVC = segue.destination as? UINavigationController,
-                let targetController = destVC.topViewController as? PostPageController {
-                targetController.postId = postId[buttonTag!]
-                targetController.postClass = postClass[buttonTag!]
-                targetController.postTitle = postTitle[buttonTag!]
-                targetController.postContent = postContent[buttonTag!]
+            let tag = sender as! Int
+            if let targetController = segue.destination as? PostPageController{
+                print(tag)
+                targetController.postId = postId[tag]
+                targetController.postClass = postClass[tag]
+                targetController.postTitle = postTitle[tag]
+                targetController.postContent = postContent[tag]
             }
         }
     }
     @IBAction func postButtonsClick(_ sender: UIButton) {
-        buttonTag = sender.tag
-        performSegue(withIdentifier: "ToPostControllerSegue", sender: self)
+        performSegue(withIdentifier: "ToPostControllerSegue", sender: sender.tag)
     }
 
 }

@@ -23,6 +23,7 @@
 		9FDD59DC27145D56004CF522 /* LoginButtonVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD59DB27145D56004CF522 /* LoginButtonVC1.swift */; };
 		9FDD59DE27152E0E004CF522 /* LoginButtonVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD59DD27152E0E004CF522 /* LoginButtonVC2.swift */; };
 		9FECB27D27098913001BCDA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECB27C27098913001BCDA6 /* LoginController.swift */; };
+		9FFB8690274CCABC00008EB4 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB868F274CCABC00008EB4 /* ApiModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9FDD59DB27145D56004CF522 /* LoginButtonVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonVC1.swift; sourceTree = "<group>"; };
 		9FDD59DD27152E0E004CF522 /* LoginButtonVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonVC2.swift; sourceTree = "<group>"; };
 		9FECB27C27098913001BCDA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		9FFB868F274CCABC00008EB4 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				9F240D4E2732C32E0047F8FC /* TextFieldModel.swift */,
+				9FFB868F274CCABC00008EB4 /* ApiModel.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				9F47EE6227097E250036FD11 /* AppDelegate.swift in Sources */,
 				9F065900274BDD8A0069DE10 /* ForumController.swift in Sources */,
 				9F47EE6427097E250036FD11 /* SceneDelegate.swift in Sources */,
+				9FFB8690274CCABC00008EB4 /* ApiModel.swift in Sources */,
 				9FDD59DE27152E0E004CF522 /* LoginButtonVC2.swift in Sources */,
 				9F065904274C1FCF0069DE10 /* PostPageController.swift in Sources */,
 				9F240D4F2732C32E0047F8FC /* TextFieldModel.swift in Sources */,
