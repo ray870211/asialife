@@ -16,6 +16,7 @@ class PostPageController: UIViewController{
     var postContent :String!
     var commentAuthor = [String]()
     var commentContent = [String]()
+    var commentScore = [String]()
     var itemArray = [String]()
     var scrollView: UIScrollView!
     var label: UILabel!
@@ -29,6 +30,8 @@ class PostPageController: UIViewController{
     var labelArray:[UILabel] = []
     var upButtonArray:[UIButton] = []
     var downButtonArray:[UIButton] = []
+    var scoreArray:[UILabel] = []
+    var countI:Int = 0
     struct row{
         var x:Int
         var y:Int
@@ -71,8 +74,6 @@ class PostPageController: UIViewController{
         //scrollView
         scrollView = UIScrollView()
         scrollView.frame = CGRect(x: 0, y: 0, width: fullSize.width, height: fullSize.height)
-//        scrollView.contentSize
-//        scrollView.backgroundColor = UIColor.yellow
         view.addSubview(scrollView)
         
         //label
@@ -90,11 +91,15 @@ class PostPageController: UIViewController{
         postApi {
             DispatchQueue.main.async {
                 for i in 0...self.commentAuthor.count-1{
+                    self.countI+=1
                     self.addOneComment(i: i)
+                    print(self.countI)
+                    print(i)
                 }
             }
         }
     }
+   
     @objc func clickCommentButton(){
         var textField = UITextField()
                //新增一個alert 選擇他的樣式
@@ -105,7 +110,6 @@ class PostPageController: UIViewController{
 //                   self.itemArray.append(textField.text!)
                    print(textField.text!)
                    self.addCommentApi(commentText:textField.text!)
-                  
                }
                alert.addTextField { (alertTextField) in
                    alertTextField.placeholder = "請輸入文字"
@@ -116,9 +120,11 @@ class PostPageController: UIViewController{
                present(alert,animated: true,completion: nil)
     }
     func addOneComment(i:Int){
-        commentViewArray.append(UIView())
-        commentViewArray[i].frame = CGRect(x: 0, y: 50+170*(i), width: Int(fullSize.width), height: 170)
+        scrollView.contentSize = CGSize(width: 300, height: (i+1)*200)
 
+        commentViewArray.append(UIView())
+        commentViewArray[i].frame = CGRect(x: 0, y: 50+170*(i), width: Int(fullSize.width), height: 200)
+      
         commentViewArray[i].translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(commentViewArray[i])
         //userimage
@@ -140,15 +146,23 @@ class PostPageController: UIViewController{
 //        NSLayoutConstraint(item: labelArray[i] , attribute: .trailing, relatedBy: .equal, toItem: commentViewArray[i], attribute: .trailing, multiplier: 1, constant: -10).isActive = true
         labelArray[i].text = commentContent[i]
         commentViewArray[i].addSubview(labelArray[i])
+        //score
+        scoreArray.append(UILabel())
+        scoreArray[i].frame = CGRect(x: 18, y: 73, width: 15, height: 15)
+        scoreArray[i].text = commentScore[i]
+        commentViewArray[i].addSubview(scoreArray[i])
         //button
-        upButtonArray.append(UIButton(type: .contactAdd))
+        upButtonArray.append(UIButton())
+        upButtonArray[i].setImage(UIImage(named: "arrow-up"), for: .normal)
         upButtonArray[i].frame = CGRect(x: 8, y: 50, width: 30, height: 30)
         commentViewArray[i].addSubview(upButtonArray[i])
-        downButtonArray.append(UIButton(type: .contactAdd))
+        //button
+        downButtonArray.append(UIButton())
+        downButtonArray[i].setImage(UIImage(named: "arrow-down"), for: .normal)
         downButtonArray[i].frame = CGRect(x: 8, y: 80, width: 30, height: 30)
         commentViewArray[i].addSubview(downButtonArray[i])
         //line
-        drawLineFromPointToPoint(startX: 20, toEndingX: Int(fullSize.width)-20, startingY: (i+1)*200, toEndingY: (i+1)*200, ofColor: UIColor.black, widthOfLine: 1, inView: scrollView)
+        drawLineFromPointToPoint(startX: 20, toEndingX: Int(fullSize.width)-20, startingY: 50+(i+1)*170, toEndingY: 50+(i+1)*170, ofColor: UIColor.gray, widthOfLine: 1, inView: scrollView)
     }
         
     func addCommentApi(commentText:String){
@@ -168,6 +182,14 @@ class PostPageController: UIViewController{
                     let decoder = JSONDecoder()
                     let createUserResponse = try decoder.decode(CreateUserResponse.self, from: data)
                     print(createUserResponse)
+                    if(createUserResponse.status_code == "200"){
+                        self.postApi{
+                            DispatchQueue.main.async {
+                                print(self.countI)
+                            self.addOneComment(i: self.countI)
+                            }
+                        }
+                    }
                 } catch  {
                     print(error)
                 }
@@ -182,6 +204,7 @@ class PostPageController: UIViewController{
             let author: String
             let content: String
             let create_time: String
+            let score: String
         }
         let postData = "id=\(postId!)".data(using: .utf8)
         let url = URL(string: "\(ApiMode().url)/select_comment.php")!
@@ -195,12 +218,15 @@ class PostPageController: UIViewController{
                     //                    print(String(data: data,encoding: .utf8))
                     let decoder = JSONDecoder()
                     let createUserResponse = try decoder.decode(CommentData.self, from: data)
+                    self.commentAuthor.removeAll()
+                    self.commentContent.removeAll()
                     for commentData in createUserResponse.comment_data{
+                        
                         self.commentAuthor.append(commentData.author)
                         self.commentContent.append(commentData.content)
-                        
+                        self.commentScore.append(commentData.score)
                     }
-//                    print(createUserResponse.comment_data)
+                    print(createUserResponse.comment_data)
                     complatetionBlock()
                 } catch  {
                     print(error)

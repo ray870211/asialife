@@ -42,13 +42,13 @@ class StoreControllerVC1: UIViewController{
                     self.imageButton[i].setImage(self.convertBase64StringToImage(imageBase64String: self.storeImage[i]),for: .normal)
                     self.label[i].text = self.name[i]
                     
+                    
                 }
             }
         }
     }
     @IBAction func clickButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "ToStorePageSegue", sender: sender.tag)
-        //        print(store[0].name)
     }
     
     func postApi(completionBlock: @escaping () -> Void) {
