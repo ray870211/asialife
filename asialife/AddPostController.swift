@@ -16,6 +16,7 @@ class AddPostController: UIViewController, UITextFieldDelegate{
         postTitle.delegate = self
         postContent.delegate = self
     }
+    
     @IBAction func AddPostButtonClick(_ sender: UIButton) {
         print(postTitle.text!)
         if(postTitle.text! == "" || postContent.text! == ""){

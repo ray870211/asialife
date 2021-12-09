@@ -7,5 +7,5 @@
 
 import Foundation
 class ApiMode{
-    let url = "http://192.168.1.24"
+    let url = "http://192.168.1.14"
 }

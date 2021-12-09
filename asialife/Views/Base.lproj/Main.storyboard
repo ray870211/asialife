@@ -1009,7 +1009,7 @@
         <!--Login Controller-->
         <scene sceneID="Fj8-sZ-P39">
             <objects>
-                <viewController id="hv3-kY-W9D" customClass="LoginController" customModule="asialife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="hv3-kY-W9D" customClass="LoginController" customModule="asialife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k7Z-4c-IJa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1155,195 +1155,14 @@
         <!--Forum ControllerVC1-->
         <scene sceneID="WP3-UF-7WO">
             <objects>
-                <viewController id="dFn-QY-lHZ" customClass="ForumControllerVC1" customModule="asialife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForumControllerVC1" id="dFn-QY-lHZ" customClass="ForumControllerVC1" customModule="asialife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QFr-Al-QZ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-Wg-Sht">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ6-mg-2pL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="111.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Usw-ZT-BYf">
-                                                <rect key="frame" x="30" y="43" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZt-f5-yxP">
-                                                <rect key="frame" x="195" y="49" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="aCb-GY-CZ1"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="Usw-ZT-BYf" firstAttribute="centerY" secondItem="eZ6-mg-2pL" secondAttribute="centerY" id="2FJ-Rg-E3s"/>
-                                            <constraint firstItem="Usw-ZT-BYf" firstAttribute="leading" secondItem="eZ6-mg-2pL" secondAttribute="leading" constant="30" id="O2u-n4-5Zb"/>
-                                            <constraint firstItem="VZt-f5-yxP" firstAttribute="centerX" secondItem="eZ6-mg-2pL" secondAttribute="centerX" id="jjD-MB-9Bc"/>
-                                            <constraint firstItem="VZt-f5-yxP" firstAttribute="centerY" secondItem="Usw-ZT-BYf" secondAttribute="centerY" id="t4c-uj-OsI"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkJ-Eu-RiT">
-                                        <rect key="frame" x="0.0" y="111.5" width="414" height="112"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-3d-cmL">
-                                                <rect key="frame" x="30" y="43" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaA-Rr-Zcz">
-                                                <rect key="frame" x="195" y="49" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="swf-GA-lln"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="jaA-Rr-Zcz" firstAttribute="centerX" secondItem="KkJ-Eu-RiT" secondAttribute="centerX" id="5Dd-VS-4AF"/>
-                                            <constraint firstItem="cWP-3d-cmL" firstAttribute="leading" secondItem="KkJ-Eu-RiT" secondAttribute="leading" constant="30" id="9Sr-FC-Ig6"/>
-                                            <constraint firstItem="cWP-3d-cmL" firstAttribute="centerY" secondItem="KkJ-Eu-RiT" secondAttribute="centerY" id="HMU-Gz-9y5"/>
-                                            <constraint firstItem="jaA-Rr-Zcz" firstAttribute="centerY" secondItem="cWP-3d-cmL" secondAttribute="centerY" id="abc-3E-NQN"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myy-H4-6sw">
-                                        <rect key="frame" x="0.0" y="223.5" width="414" height="111.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-Kb-brH">
-                                                <rect key="frame" x="30" y="43" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beE-qP-e1A">
-                                                <rect key="frame" x="195" y="49" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="Udh-25-lrW"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="beE-qP-e1A" firstAttribute="centerY" secondItem="fEX-Kb-brH" secondAttribute="centerY" id="6Eb-d7-KMb"/>
-                                            <constraint firstItem="fEX-Kb-brH" firstAttribute="centerY" secondItem="myy-H4-6sw" secondAttribute="centerY" id="FMR-fE-0bd"/>
-                                            <constraint firstItem="beE-qP-e1A" firstAttribute="centerX" secondItem="myy-H4-6sw" secondAttribute="centerX" id="YyA-8a-2CP"/>
-                                            <constraint firstItem="fEX-Kb-brH" firstAttribute="leading" secondItem="myy-H4-6sw" secondAttribute="leading" constant="30" id="tcQ-Qp-TUD"/>
-                                        </constraints>
-                                    </view>
-                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yD-1g-5bG">
-                                        <rect key="frame" x="0.0" y="335" width="414" height="112"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="gPQ-dv-H6c">
-                                                <rect key="frame" x="30" y="43" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-tn-Dxn">
-                                                <rect key="frame" x="195" y="49" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="6Cd-9J-Jfn"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="gPQ-dv-H6c" firstAttribute="centerY" secondItem="2yD-1g-5bG" secondAttribute="centerY" id="PkI-Ov-v8d"/>
-                                            <constraint firstItem="nzc-tn-Dxn" firstAttribute="centerY" secondItem="gPQ-dv-H6c" secondAttribute="centerY" id="okq-1H-1Nr"/>
-                                            <constraint firstItem="nzc-tn-Dxn" firstAttribute="centerX" secondItem="2yD-1g-5bG" secondAttribute="centerX" id="wBZ-9D-4UY"/>
-                                            <constraint firstItem="gPQ-dv-H6c" firstAttribute="leading" secondItem="2yD-1g-5bG" secondAttribute="leading" constant="30" id="xjW-Y4-YCK"/>
-                                        </constraints>
-                                    </view>
-                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-kY-Zaa">
-                                        <rect key="frame" x="0.0" y="447" width="414" height="111.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="PPU-BJ-Luw">
-                                                <rect key="frame" x="30" y="42.5" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8a-go-ulC">
-                                                <rect key="frame" x="195" y="48.5" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="clc-hS-Qmd"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="k8a-go-ulC" firstAttribute="centerX" secondItem="oDP-kY-Zaa" secondAttribute="centerX" id="D2I-31-3bQ"/>
-                                            <constraint firstItem="PPU-BJ-Luw" firstAttribute="leading" secondItem="oDP-kY-Zaa" secondAttribute="leading" constant="30" id="MHm-3T-cEl"/>
-                                            <constraint firstItem="k8a-go-ulC" firstAttribute="centerY" secondItem="PPU-BJ-Luw" secondAttribute="centerY" id="Q74-Ln-691"/>
-                                            <constraint firstItem="PPU-BJ-Luw" firstAttribute="centerY" secondItem="oDP-kY-Zaa" secondAttribute="centerY" id="tYw-5O-O0j"/>
-                                        </constraints>
-                                    </view>
-                                    <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ME9-QD-dvU">
-                                        <rect key="frame" x="0.0" y="558.5" width="414" height="112"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="eMN-Kj-wmW">
-                                                <rect key="frame" x="30" y="43" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f8-rw-rsD">
-                                                <rect key="frame" x="195" y="49" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="gqC-4M-69R"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="6f8-rw-rsD" firstAttribute="centerY" secondItem="eMN-Kj-wmW" secondAttribute="centerY" id="EU4-Pt-aFz"/>
-                                            <constraint firstItem="6f8-rw-rsD" firstAttribute="centerX" secondItem="ME9-QD-dvU" secondAttribute="centerX" id="MO2-pc-d0q"/>
-                                            <constraint firstItem="eMN-Kj-wmW" firstAttribute="centerY" secondItem="ME9-QD-dvU" secondAttribute="centerY" id="flz-c4-6RR"/>
-                                            <constraint firstItem="eMN-Kj-wmW" firstAttribute="leading" secondItem="ME9-QD-dvU" secondAttribute="leading" constant="30" id="yLb-Lh-eNl"/>
-                                        </constraints>
-                                    </view>
-                                    <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3u-U5-iRc">
-                                        <rect key="frame" x="0.0" y="670.5" width="414" height="111.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="zS3-Pu-QQt">
-                                                <rect key="frame" x="30" y="42.5" width="29" height="26"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiv-fQ-9Oc">
-                                                <rect key="frame" x="195" y="48.5" width="24" height="14"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="postButtonsClick:" destination="dFn-QY-lHZ" eventType="touchUpInside" id="Eir-78-2N7"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="fiv-fQ-9Oc" firstAttribute="centerX" secondItem="I3u-U5-iRc" secondAttribute="centerX" id="2yY-09-8df"/>
-                                            <constraint firstItem="zS3-Pu-QQt" firstAttribute="leading" secondItem="I3u-U5-iRc" secondAttribute="leading" constant="30" id="5qv-Dw-SSV"/>
-                                            <constraint firstItem="zS3-Pu-QQt" firstAttribute="centerY" secondItem="I3u-U5-iRc" secondAttribute="centerY" id="NAP-TB-iaj"/>
-                                            <constraint firstItem="fiv-fQ-9Oc" firstAttribute="centerY" secondItem="zS3-Pu-QQt" secondAttribute="centerY" id="oQy-iM-H50"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="W2Y-do-XCY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="JAP-Wg-Sht" firstAttribute="leading" secondItem="W2Y-do-XCY" secondAttribute="leading" id="5LV-p4-o9F"/>
-                            <constraint firstItem="JAP-Wg-Sht" firstAttribute="top" secondItem="QFr-Al-QZ1" secondAttribute="top" id="FZU-Rp-QhH"/>
-                            <constraint firstItem="W2Y-do-XCY" firstAttribute="trailing" secondItem="JAP-Wg-Sht" secondAttribute="trailing" id="IRG-cb-AzR"/>
-                            <constraint firstItem="W2Y-do-XCY" firstAttribute="bottom" secondItem="JAP-Wg-Sht" secondAttribute="bottom" id="WCW-q5-k47"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outletCollection property="postButtons" destination="VZt-f5-yxP" collectionClass="NSMutableArray" id="55T-cg-OdG"/>
-                        <outletCollection property="postButtons" destination="jaA-Rr-Zcz" collectionClass="NSMutableArray" id="8M5-v1-cIw"/>
-                        <outletCollection property="postButtons" destination="beE-qP-e1A" collectionClass="NSMutableArray" id="v48-OB-4eF"/>
-                        <outletCollection property="postButtons" destination="nzc-tn-Dxn" collectionClass="NSMutableArray" id="s8d-QN-Jg8"/>
-                        <outletCollection property="postButtons" destination="k8a-go-ulC" collectionClass="NSMutableArray" id="hXR-QF-V2r"/>
-                        <outletCollection property="postButtons" destination="6f8-rw-rsD" collectionClass="NSMutableArray" id="ycU-GL-q8d"/>
-                        <outletCollection property="postButtons" destination="fiv-fQ-9Oc" collectionClass="NSMutableArray" id="H5H-K9-IPh"/>
                         <segue destination="c7P-bk-RBz" kind="presentation" identifier="ToPostControllerSegue" id="iM3-ga-gGw"/>
                     </connections>
                 </viewController>
@@ -1354,7 +1173,7 @@
         <!--Post Page Controller-->
         <scene sceneID="Eey-SV-P9F">
             <objects>
-                <viewController id="c7P-bk-RBz" customClass="PostPageController" customModule="asialife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostPageController" id="c7P-bk-RBz" customClass="PostPageController" customModule="asialife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EYI-B8-ew0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
