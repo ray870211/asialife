@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class ForumControllerVC1: UIViewController{
+class ForumControllerVC3: UIViewController{
     var postId = [String]()
     var postAuthor = [String]()
     var postClass = [String]()
@@ -130,7 +130,7 @@ class ForumControllerVC1: UIViewController{
             let post_create_time: String
             let post_author_image : String
         }
-        let postData = "class=0".data(using: .utf8)
+        let postData = "class=2".data(using: .utf8)
         let url = URL(string: "\(ApiMode().url)/select_post.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

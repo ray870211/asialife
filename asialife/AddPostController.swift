@@ -36,7 +36,7 @@ class AddPostController: UIViewController, UITextFieldDelegate{
         struct CreateUserResponse: Decodable {
             let status_code: String
         }
-        let postData = "title=\(postTitle.text!)&class=\(postClass)&user=ray&content=\(postContent.text!)".data(using: .utf8)
+        let postData = "id=\(UserModel.userData.id!)&title=\(postTitle.text!)&class=\(postClass)&user=\(UserModel.userData.name!)&content=\(postContent.text!)".data(using: .utf8)
         let url = URL(string: "\(ApiMode().url)/add_post.php")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -66,7 +66,6 @@ class AddPostController: UIViewController, UITextFieldDelegate{
                             self.present(controller, animated: true, completion: nil)
                         }
                     }
-                    print(createUserResponse)
                 } catch  {
                     print(error)
                 }

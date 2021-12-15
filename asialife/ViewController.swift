@@ -14,7 +14,7 @@ class ViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(respondsStoreData)
+        print(UserModel.userData.id!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

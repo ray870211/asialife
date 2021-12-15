@@ -31,7 +31,11 @@ class LoginController:UIViewController{
 
         
     }
+    @IBAction func registerButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toRigsterSegue", sender: self)
+    }
     
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == LoginController.toLoginButtonVC1{
@@ -49,8 +53,8 @@ class LoginController:UIViewController{
     }
     
     @IBAction func login(_ sender: UIButton) {
-        email = "ray870211@gmail.com"
-        password = "12345"
+        email = "eva30922@gmail.com"
+        password = "1234556"
         postApi()
     }
     
@@ -64,7 +68,6 @@ class LoginController:UIViewController{
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data,
                let content = String(data: data, encoding: .utf8) {
-                print(content)
                 
             }
         }.resume()
@@ -72,7 +75,13 @@ class LoginController:UIViewController{
     func postApi(){
         struct CreateUserResponse: Decodable {
             let status_code: String
-            let message: String
+            let id: String
+            let name: String
+            let user_class: String
+            let u_id: String
+            let email: String
+            let password: String
+            let image: String
         }
         let postData = "email=\(email)&password=\(password)".data(using: .utf8)
         let url = URL(string: "\(ApiMode().url)/login.php")!
@@ -87,6 +96,12 @@ class LoginController:UIViewController{
                     let decoder = JSONDecoder()
                     let createUserResponse = try decoder.decode(CreateUserResponse.self, from: data)
                     if(createUserResponse.status_code=="200"){
+                        UserModel.userData.id = createUserResponse.id
+                        UserModel.userData.name = createUserResponse.name
+                        UserModel.userData.user_class = createUserResponse.user_class
+                        UserModel.userData.u_id = createUserResponse.u_id
+                        UserModel.userData.email = createUserResponse.email
+                        UserModel.userData.image = createUserResponse.image
                         DispatchQueue.main.async {
                             //切換到主線程
                             // UIView usage
@@ -102,7 +117,6 @@ class LoginController:UIViewController{
                             self.present(controller, animated: true, completion: nil)
                         }
                     }
-                    print(createUserResponse)
                 } catch  {
                     print(error)
                 }

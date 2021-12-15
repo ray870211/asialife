@@ -13,6 +13,7 @@ class StoreControllerVC1: UIViewController{
     @IBOutlet var label: [UILabel]!
     @IBOutlet var topImage: [UIImageView]!
     @IBOutlet var imageButton: [UIButton]!
+    var storeId = [String]()
     var name = [String]()
     var storeImage = [String]()
     var address = [String]()
@@ -26,12 +27,12 @@ class StoreControllerVC1: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "ToStorePageSegue"{
             let tag = sender as! Int
-            if let sotrePage = segue.destination as? StorePageController {
-                
-                sotrePage.titleText = name[tag]
-                sotrePage.imageText = storeImage[tag]
-                sotrePage.addressText = address[tag]
-                sotrePage.phoneText = phone[tag]
+            if let storePage = segue.destination as? StorePageController {
+                storePage.storeId = storeId[tag]
+                storePage.titleText = name[tag]
+                storePage.imageText = storeImage[tag]
+                storePage.addressText = address[tag]
+                storePage.phoneText = phone[tag]
             }
         }
     }
@@ -40,6 +41,9 @@ class StoreControllerVC1: UIViewController{
             DispatchQueue.main.async {
                 for i in 0...self.name.count-1 {
                     self.imageButton[i].setImage(self.convertBase64StringToImage(imageBase64String: self.storeImage[i]),for: .normal)
+                    self.imageButton[i].imageView?.contentMode = .scaleAspectFill
+                    self.imageButton[i].contentVerticalAlignment = .top
+                    self.imageButton[i].contentHorizontalAlignment = .center
                     self.label[i].text = self.name[i]
                     
                     
@@ -69,17 +73,16 @@ class StoreControllerVC1: UIViewController{
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
-                    //                    print(String(data: data,encoding: .utf8))
                     let decoder = JSONDecoder()
                     let createUserResponse = try decoder.decode(StoreData.self, from: data)
                     for storeData in createUserResponse.store_data{
+                        self.storeId.append(storeData.id)
                         self.name.append(storeData.name)
                         self.storeImage.append(storeData.image)
                         self.address.append(storeData.address)
                         self.phone.append(storeData.phone)
                         }
                     completionBlock()
-                    //                    print(createUserResponse.store_data[0].name)
                 } catch  {
                     print(error)
                 }

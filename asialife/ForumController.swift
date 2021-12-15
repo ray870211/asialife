@@ -21,7 +21,6 @@ class ForumController: UIViewController{
         }
     }
     @IBAction func changContainerBtn(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
         switch sender.selectedSegmentIndex{
         case 0:
             containerView[0].isHidden = false
